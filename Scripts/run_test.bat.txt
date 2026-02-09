@@ -1,0 +1,29 @@
+@echo off
+echo ========================================
+echo Ball n Bounce Performance Test Runner
+echo ========================================
+
+REM Set JMeter path (Update this to your JMeter installation)
+set JMETER_PATH=C:\Users\HP\Downloads\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin
+
+REM Test 1: 50 Users
+echo.
+echo Running 50 User Test...
+"%JMETER_PATH%\jmeter.bat" -n -t "..\Test-Plans\Basic_Load_Tests\Phase1_50_Users.jmx" -l "results_50.jtl" -e -o "report_50"
+
+REM Test 2: 100 Users  
+echo.
+echo Running 100 User Test...
+"%JMETER_PATH%\jmeter.bat" -n -t "..\Test-Plans\Basic_Load_Tests\Phase2_100_Users.jmx" -l "results_100.jtl" -e -o "report_100"
+
+REM Test 3: 500 Users
+echo.
+echo Running 500 User Test...
+"%JMETER_PATH%\jmeter.bat" -n -t "..\Test-Plans\Basic_Load_Tests\Phase3_500_Users.jmx" -l "results_500.jtl" -e -o "report_500"
+
+echo.
+echo ========================================
+echo All tests completed!
+echo Reports generated in respective folders
+echo ========================================
+pause

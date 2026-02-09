@@ -1,0 +1,38 @@
+@echo off
+echo ========================================
+echo HTML Report Generator
+echo ========================================
+
+set JMETER_PATH=C:\Users\HP\Downloads\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin
+
+echo Generating HTML reports from existing .jtl files...
+
+REM Generate report for 50 users
+if exist "results_50.jtl" (
+    echo Generating 50 user report...
+    "%JMETER_PATH%\jmeter.bat" -g "results_50.jtl" -o "report_50_html"
+) else (
+    echo results_50.jtl not found
+)
+
+REM Generate report for 100 users
+if exist "results_100.jtl" (
+    echo Generating 100 user report...
+    "%JMETER_PATH%\jmeter.bat" -g "results_100.jtl" -o "report_100_html"
+) else (
+    echo results_100.jtl not found
+)
+
+REM Generate report for 500 users
+if exist "results_500.jtl" (
+    echo Generating 500 user report...
+    "%JMETER_PATH%\jmeter.bat" -g "results_500.jtl" -o "report_500_html"
+) else (
+    echo results_500.jtl not found
+)
+
+echo.
+echo ========================================
+echo Report generation complete!
+echo ========================================
+pause
