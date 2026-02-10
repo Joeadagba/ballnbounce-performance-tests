@@ -9,23 +9,23 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    
+
     - name: Setup Java
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-    
+
     - name: Download JMeter
       run: |
         wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.tgz
-        tar -xzf apache-jmeter-5.6.3.tgz
-    
+        tar -zxf apache-jmeter-5.6.3.tgz
+
     - name: List test files
       run: |
         echo "Available test plans:"
