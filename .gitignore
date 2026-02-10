@@ -1,0 +1,38 @@
+# JMeter files
+*.jmx
+*.jtl
+*.csv
+*.jkr
+
+# Test results and reports
+/test-results/
+/reports/
+/output/
+/logs/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+node_modules/
+venv/
+__pycache__/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Local configuration
+.env
+.env.local
+*.local
