@@ -19,14 +19,16 @@ jobs:
     - name: Setup Java
       uses: actions/setup-java@v3
       with:
+        distribution: 'temurin'  # ← ADD THIS LINE
         java-version: '11'
 
-    - name: Download JMeter
+    - name: Install JMeter
       run: |
-        wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.tgz
-        tar -zxf apache-jmeter-5.6.3.tgz
+        sudo apt-get update
+        sudo apt-get install -y jmeter
 
     - name: List test files
       run: |
         echo "Available test plans:"
         find . -name "*.jmx" -type f
+        echo "Total JMX files: $(find . -name "*.jmx" -type f | wc -l)"
